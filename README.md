@@ -1,8 +1,8 @@
 # Python personal projects
 These are some personal projects written in python.
 
-1. Server side implementation
-1. Administration scripts
+1. Server side implementation (backend)
+1. Administration scripts (scripts_bdata)
 
 The project 1 is about a server side set of webservice to deal with authorization/authentication in Active Directory.
 
