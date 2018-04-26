@@ -1,13 +1,13 @@
-#coding=utf8
+# coding=utf8
 
-import oracle_hdfs.perfileleitorlocvot.escrita as escrita
+import oracle_hdfs.abstencao.escrita as escrita
 
 if __name__ == '__main__':
     exit_loop = False
     UF_BRASILIA = 3
     UF_ZZ = 26
     uf = 3
-    escrita.executa_recuperacao_ft_ss_perfil_eleitor_locvot(UF_BRASILIA)
+    escrita.executa_recuperacao_ft_ev_abstencao(UF_BRASILIA)
 '''    
         while not exit_loop:
         try:

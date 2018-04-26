@@ -1,6 +1,6 @@
-#coding=utf8
+# coding=utf8
 
-import oracle.filiadomes.escrita as escrita
+import oracle_hdfs.filiadomes.escrita as escrita
 
 if __name__ == '__main__':
     exit_loop = False

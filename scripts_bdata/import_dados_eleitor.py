@@ -1,7 +1,7 @@
 #coding=utf8
 
 
-from oracle.importadadoshdfs import ImportDadosHdfs
+from oracle_hdfs.importadadoshdfs import ImportDadosHdfs
 
 
 if __name__ == '__main__':

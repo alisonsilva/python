@@ -1,0 +1,43 @@
+<workflow-app xmlns="uri:oozie:workflow:0.4" name="atu_dm_movimento_eleitor">
+    <start to="download-info"/>
+    <action name="download-info">
+        <shell xmlns="uri:oozie:shell-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+            </configuration>
+            <exec>run_workflow_baixa.py</exec>
+            <file>/scripts/oozie/atualizacao/dm_movimento_eleitor/run_workflow_baixa.py</file>
+            <capture-output/>
+        </shell>
+        <ok to="upload-hdfs"/>
+        <error to="fail"/>
+    </action>
+    <action name="upload-hdfs">
+        <shell xmlns="uri:oozie:shell-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+            </configuration>
+            <exec>run_workflow_carga.py</exec>
+            <file>/scripts/oozie/atualizacao/dm_movimento_eleitor/run_workflow_carga.py</file>
+            <capture-output/>
+        </shell>
+        <ok to="end"/>
+        <error to="fail"/>
+    </action>
+
+
+    <kill name="fail">
+    <message>Python action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>

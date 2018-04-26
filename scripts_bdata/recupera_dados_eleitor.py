@@ -1,6 +1,6 @@
 #coding=utf8
 
-import oracle.situacaoeleitor.escrita as escrita
+import oracle_hdfs.situacaoeleitor.escrita as escrita
 
 if __name__ == '__main__':
     exit_loop = False

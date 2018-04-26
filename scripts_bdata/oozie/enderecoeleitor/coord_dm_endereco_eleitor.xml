@@ -1,0 +1,19 @@
+<coordinator-app xmlns = "uri:oozie:coordinator:0.4" name = "coord_dm_endereco_eleitor"
+                 frequency = "0 12 * * 7" start = "2018-01-18T01:00Z"
+                 end = "2025-12-31T00:00Z" timezone = "America/Sao_Paulo">
+
+   <controls>
+      <timeout>1</timeout>
+      <concurrency>1</concurrency>
+      <execution>FIFO</execution>
+      <throttle>1</throttle>
+   </controls>
+
+   <action>
+      <workflow>
+         <app-path>/scripts/oozie/atualizacao/dm_eleitor/workflow_dm_endereco_eleitor.xml</app-path>
+      </workflow>
+   </action>
+
+</coordinator-app>
+
